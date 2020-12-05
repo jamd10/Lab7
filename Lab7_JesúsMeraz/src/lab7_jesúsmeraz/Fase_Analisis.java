@@ -15,6 +15,9 @@ public class Fase_Analisis implements Serializable {
         this.Analisis_Semantico = Analisis_Semantico;
     }
 
+    Fase_Analisis() {
+    }
+
     public int getAnalisis_Lexico() {
         return Analisis_Lexico;
     }

@@ -34,6 +34,7 @@ public class Maestro extends javax.swing.JFrame {
         analisis1 = new javax.swing.JTable();
         tab = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
+        jProgressBar1 = new javax.swing.JProgressBar();
         jPanel2 = new javax.swing.JPanel();
         jam = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -82,11 +83,17 @@ public class Maestro extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 669, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(171, 171, 171)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(211, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 645, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(495, Short.MAX_VALUE))
         );
 
         tab.addTab("Barras", jPanel1);
@@ -249,7 +256,7 @@ public class Maestro extends javax.swing.JFrame {
 
     private void jamItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jamItemStateChanged
         if (evt.getStateChange() == 1) {
-            Compiladores temp = (Compiladores) jam.getSelectedItem();
+            Compiladores temp = new Compiladores();
             Fase_Analisis tt = (Fase_Analisis) jam.getSelectedItem();
             if (tt != null) {
                 // análisis
@@ -284,60 +291,97 @@ public class Maestro extends javax.swing.JFrame {
                         }
                     });
                     Error gg = new Error(CodigoError, Descripcion);
-//                    for (Fase_Analisis t : gg.g) {
-//                        Object row[] = {t.getDescripcion(), t.getUv()};
-//                        DefaultTableModel m = (DefaultTableModel) jTable1.getModel();
-//                        m.addRow(row);
-//                        jTable1.setModel(m);
-//                        Error jm = new Error(CodigoError, Descripcion);
+                    for (Fase_Analisis t : temp.getFase_Analisis()) {
+                        Object row[] = {CodigoError, Descripcion};
+                        DefaultTableModel m = (DefaultTableModel) error.getModel();
+                        m.addRow(row);
+                        error.setModel(m);
+                        Error jm = new Error(CodigoError, Descripcion);
 //                    }
-                    // sintesis
-                    int gci;
-                    int oc;
-                    int gc;
-                }//fin if
+                    }
+                }
+                if (sintatico < 300) {
+                    int lex = 300 - sintatico;
+                    String CodigoError = "error 404, sintatico erroneo";
+                    String Descripcion = "Su lineas son insuficientes" + "\n"
+                            + "tiene " + lexico + " lineas" + "\n"
+                            + "Le hizo falta " + lex + " lineas";
+                    error.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{},
+                            new String[]{
+                                "Codigo de error", "Descripcion"
+                            }
+                    ) {
+                        Class[] types = new Class[]{
+                            java.lang.String.class, java.lang.String.class
+                        };
+                        boolean[] canEdit = new boolean[]{
+                            false, false
+                        };
+
+                        public Class getColumnClass(int columnIndex) {
+                            return types[columnIndex];
+                        }
+
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    Error gg = new Error(CodigoError, Descripcion);
+                    for (Fase_Analisis t : temp.getFase_Analisis()) {
+                        Object row[] = {CodigoError, Descripcion};
+                        DefaultTableModel m = (DefaultTableModel) error.getModel();
+                        m.addRow(row);
+                        error.setModel(m);
+                        Error jm = new Error(CodigoError, Descripcion);
+//                    }
+                    }
+                }
+                if (semantico < 800) {
+                    int lex = 800 - semantico;
+                    String CodigoError = "error 404, semantico erroneo";
+                    String Descripcion = "Su lineas son insuficientes" + "\n"
+                            + "tiene " + lexico + " lineas" + "\n"
+                            + "Le hizo falta " + lex + " lineas";
+                    error.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{},
+                            new String[]{
+                                "Codigo de error", "Descripcion"
+                            }
+                    ) {
+                        Class[] types = new Class[]{
+                            java.lang.String.class, java.lang.String.class
+                        };
+                        boolean[] canEdit = new boolean[]{
+                            false, false
+                        };
+
+                        public Class getColumnClass(int columnIndex) {
+                            return types[columnIndex];
+                        }
+
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    Error gg = new Error(CodigoError, Descripcion);
+                    for (Fase_Analisis t : temp.getFase_Analisis()) {
+                        Object row[] = {CodigoError, Descripcion};
+                        DefaultTableModel m = (DefaultTableModel) error.getModel();
+                        m.addRow(row);
+                        error.setModel(m);
+                        Error jm = new Error(CodigoError, Descripcion);
+//                    }
+                    }
+                }
+                // sintesis
+                int gci;
+                int oc;
+                int gc;
+
             }
         }
-        // TODO add your handling code here:
-//        if (evt.getStateChange() == 1) {
-//            Alumno temp = (Alumno) cb_amigos.getSelectedItem();
-//            if (temp != null) {
-//                tf_nombre1.setText(temp.getNombre());
-//                tf_edad1.setText(Integer.toString(temp.getEdad()));
-//                lb_foto1.setIcon(temp.getFotografia());
-//
-//                jTable1.setModel(new javax.swing.table.DefaultTableModel(
-//                        new Object[][]{},
-//                        new String[]{
-//                            "Descripcion", "U.V"
-//                        }
-//                ) {
-//                    Class[] types = new Class[]{
-//                        java.lang.String.class, java.lang.String.class
-//                    };
-//                    boolean[] canEdit = new boolean[]{
-//                        false, false
-//                    };
-//
-//                    public Class getColumnClass(int columnIndex) {
-//                        return types[columnIndex];
-//                    }
-//
-//                    public boolean isCellEditable(int rowIndex, int columnIndex) {
-//                        return canEdit[columnIndex];
-//                    }
-//                });
-//
-//                for (Clase t : temp.getClases()) {
-//                    Object row[] = {t.getDescripcion(), t.getUv()};
-//                    DefaultTableModel m
-//                            = (DefaultTableModel) jTable1.getModel();
-//                    m.addRow(row);
-//                    jTable1.setModel(m);
-//                }//fin for
-//
-//            }//fin if
-//        }//fin changed
+
     }//GEN-LAST:event_jamItemStateChanged
 
     /**
@@ -383,6 +427,7 @@ public class Maestro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
