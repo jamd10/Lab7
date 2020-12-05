@@ -30,10 +30,45 @@ public class Maestro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane3 = new javax.swing.JScrollPane();
+        analisis1 = new javax.swing.JTable();
         tab = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jam = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        analisis = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        sintesis = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        error = new javax.swing.JTable();
+
+        analisis1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Descripcion", "U.V"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(analisis1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,11 +82,11 @@ public class Maestro extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 633, Short.MAX_VALUE)
+            .addGap(0, 669, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 645, Short.MAX_VALUE)
         );
 
         tab.addTab("Barras", jPanel1);
@@ -62,21 +97,129 @@ public class Maestro extends javax.swing.JFrame {
             }
         });
 
+        analisis.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Descripcion", "U.V"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(analisis);
+
+        sintesis.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Descripcion", "U.V"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(sintesis);
+
+        jLabel4.setText("Fase de analisis");
+
+        jLabel8.setText("Fase de sintesis");
+
+        error.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Descripcion", "U.V"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(error);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jam, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(447, Short.MAX_VALUE))
+                .addGap(480, 480, 480))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(jLabel8)))
+                .addGap(0, 31, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(288, 288, 288)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(21, 21, 21)
                 .addComponent(jam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(514, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
 
         tab.addTab("Simulación", jPanel2);
@@ -107,10 +250,94 @@ public class Maestro extends javax.swing.JFrame {
     private void jamItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jamItemStateChanged
         if (evt.getStateChange() == 1) {
             Compiladores temp = (Compiladores) jam.getSelectedItem();
-            if (temp != null) {
-                
-            }//fin if
+            Fase_Analisis tt = (Fase_Analisis) jam.getSelectedItem();
+            if (tt != null) {
+                // análisis
+                int lexico = tt.getAnalisis_Lexico();
+                int sintatico = tt.getAnalisis_Sintactico();
+                int semantico = tt.getAnalisis_Semantico();
+                if (lexico < 300) {
+                    int lex = 300 - lexico;
+                    String CodigoError = "error 404, lexico erroneo";
+                    String Descripcion = "Su lineas son insuficientes" + "\n"
+                            + "tiene " + lexico + " lineas" + "\n"
+                            + "Le hizo falta " + lex + " lineas";
+                    error.setModel(new javax.swing.table.DefaultTableModel(
+                            new Object[][]{},
+                            new String[]{
+                                "Codigo de error", "Descripcion"
+                            }
+                    ) {
+                        Class[] types = new Class[]{
+                            java.lang.String.class, java.lang.String.class
+                        };
+                        boolean[] canEdit = new boolean[]{
+                            false, false
+                        };
+
+                        public Class getColumnClass(int columnIndex) {
+                            return types[columnIndex];
+                        }
+
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
+                    });
+                    Error gg = new Error(CodigoError, Descripcion);
+//                    for (Fase_Analisis t : gg.g) {
+//                        Object row[] = {t.getDescripcion(), t.getUv()};
+//                        DefaultTableModel m = (DefaultTableModel) jTable1.getModel();
+//                        m.addRow(row);
+//                        jTable1.setModel(m);
+//                        Error jm = new Error(CodigoError, Descripcion);
+//                    }
+                    // sintesis
+                    int gci;
+                    int oc;
+                    int gc;
+                }//fin if
+            }
         }
+        // TODO add your handling code here:
+//        if (evt.getStateChange() == 1) {
+//            Alumno temp = (Alumno) cb_amigos.getSelectedItem();
+//            if (temp != null) {
+//                tf_nombre1.setText(temp.getNombre());
+//                tf_edad1.setText(Integer.toString(temp.getEdad()));
+//                lb_foto1.setIcon(temp.getFotografia());
+//
+//                jTable1.setModel(new javax.swing.table.DefaultTableModel(
+//                        new Object[][]{},
+//                        new String[]{
+//                            "Descripcion", "U.V"
+//                        }
+//                ) {
+//                    Class[] types = new Class[]{
+//                        java.lang.String.class, java.lang.String.class
+//                    };
+//                    boolean[] canEdit = new boolean[]{
+//                        false, false
+//                    };
+//
+//                    public Class getColumnClass(int columnIndex) {
+//                        return types[columnIndex];
+//                    }
+//
+//                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+//                        return canEdit[columnIndex];
+//                    }
+//                });
+//
+//                for (Clase t : temp.getClases()) {
+//                    Object row[] = {t.getDescripcion(), t.getUv()};
+//                    DefaultTableModel m
+//                            = (DefaultTableModel) jTable1.getModel();
+//                    m.addRow(row);
+//                    jTable1.setModel(m);
+//                }//fin for
+//
+//            }//fin if
+//        }//fin changed
     }//GEN-LAST:event_jamItemStateChanged
 
     /**
@@ -149,9 +376,19 @@ public class Maestro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable analisis;
+    private javax.swing.JTable analisis1;
+    private javax.swing.JTable error;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JComboBox<String> jam;
+    private javax.swing.JTable sintesis;
     private javax.swing.JTabbedPane tab;
     // End of variables declaration//GEN-END:variables
 }
