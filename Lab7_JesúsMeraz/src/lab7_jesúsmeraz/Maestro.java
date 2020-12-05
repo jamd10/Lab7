@@ -39,12 +39,14 @@ public class Maestro extends javax.swing.JFrame {
         jam = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         analisis = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        sintesis = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
+        jScrollPane5 = new javax.swing.JScrollPane();
         error = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        analisis2 = new javax.swing.JTable();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        analisis3 = new javax.swing.JTable();
 
         analisis1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,7 +111,7 @@ public class Maestro extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Descripcion", "U.V"
+                "Cofigo Error", "Descripcion"
             }
         ) {
             Class[] types = new Class [] {
@@ -129,31 +131,6 @@ public class Maestro extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(analisis);
 
-        sintesis.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Descripcion", "U.V"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(sintesis);
-
         jLabel4.setText("Fase de analisis");
 
         jLabel8.setText("Fase de sintesis");
@@ -163,7 +140,7 @@ public class Maestro extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Descripcion", "U.V"
+                "Cofigo Error", "Descripcion"
             }
         ) {
             Class[] types = new Class [] {
@@ -181,7 +158,57 @@ public class Maestro extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(error);
+        jScrollPane5.setViewportView(error);
+
+        analisis2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cofigo Error", "Descripcion"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(analisis2);
+
+        analisis3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cofigo Error", "Descripcion"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(analisis3);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -192,41 +219,47 @@ public class Maestro extends javax.swing.JFrame {
                 .addComponent(jam, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(480, 480, 480))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(280, 280, 280)
-                        .addComponent(jLabel8)))
-                .addGap(0, 31, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 29, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(288, 288, 288)
-                .addComponent(jLabel4)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(288, 288, 288)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(282, 282, 282)
+                        .addComponent(jLabel8)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jLabel8)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel8)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         tab.addTab("Simulación", jPanel2);
@@ -256,9 +289,9 @@ public class Maestro extends javax.swing.JFrame {
 
     private void jamItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jamItemStateChanged
         if (evt.getStateChange() == 1) {
-            Compiladores temp = new Compiladores();
-            Fase_Analisis tt = (Fase_Analisis) jam.getSelectedItem();
-            if (tt != null) {
+            Compiladores temp = (Compiladores) jam.getSelectedItem();
+            if (temp != null) {
+                Fase_Analisis tt = new Fase_Analisis();
                 // análisis
                 int lexico = tt.getAnalisis_Lexico();
                 int sintatico = tt.getAnalisis_Sintactico();
@@ -269,12 +302,7 @@ public class Maestro extends javax.swing.JFrame {
                     String Descripcion = "Su lineas son insuficientes" + "\n"
                             + "tiene " + lexico + " lineas" + "\n"
                             + "Le hizo falta " + lex + " lineas";
-                    error.setModel(new javax.swing.table.DefaultTableModel(
-                            new Object[][]{},
-                            new String[]{
-                                "Codigo de error", "Descripcion"
-                            }
-                    ) {
+                    error.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{"Codigo de error", "Descripcion"}) {
                         Class[] types = new Class[]{
                             java.lang.String.class, java.lang.String.class
                         };
@@ -292,11 +320,10 @@ public class Maestro extends javax.swing.JFrame {
                     });
                     Error gg = new Error(CodigoError, Descripcion);
                     for (Fase_Analisis t : temp.getFase_Analisis()) {
-                        Object row[] = {CodigoError, Descripcion};
+                        Object row[] = {gg.getCodigoError(), gg.getDescripcion()};
                         DefaultTableModel m = (DefaultTableModel) error.getModel();
                         m.addRow(row);
                         error.setModel(m);
-                        Error jm = new Error(CodigoError, Descripcion);
 //                    }
                     }
                 }
@@ -374,7 +401,7 @@ public class Maestro extends javax.swing.JFrame {
 //                    }
                     }
                 }
-                // sintesis
+                // fase de sintesis
                 int gci;
                 int oc;
                 int gc;
@@ -422,6 +449,8 @@ public class Maestro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable analisis;
     private javax.swing.JTable analisis1;
+    private javax.swing.JTable analisis2;
+    private javax.swing.JTable analisis3;
     private javax.swing.JTable error;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
@@ -429,11 +458,11 @@ public class Maestro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JComboBox<String> jam;
-    private javax.swing.JTable sintesis;
     private javax.swing.JTabbedPane tab;
     // End of variables declaration//GEN-END:variables
 }
