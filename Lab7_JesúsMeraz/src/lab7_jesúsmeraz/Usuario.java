@@ -67,7 +67,7 @@ public class Usuario {
     public boolean validar() {
         //int numero = 0;
         boolean existe = false;
-        File file = new File("./Usuarios.txt");
+        File file = new File("./Usuarios.jam");
         FileReader read;
         BufferedReader Save;
         int registreishon = 1;
@@ -127,7 +127,7 @@ public class Usuario {
 
     public void registrarusuario() {
 
-        File file = new File("./Usuarios.txt");
+        File file = new File("./Usuarios.jam");
         FileWriter write;
         PrintWriter writeline;
         String name = Nombre;
@@ -185,7 +185,7 @@ public class Usuario {
     public boolean validar2() {
         //int numero = 0;
         boolean existe = false;
-        File file = new File("./Usuarios.txt");
+        File file = new File("./Usuarios.jam");
         FileReader read;
         BufferedReader Save;
         int regis = 1;

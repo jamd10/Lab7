@@ -221,8 +221,11 @@ public class Principal extends javax.swing.JFrame {
         Password.setText("");
         if (jm.numero == 0) {
             jm.registrarusuario();
-            Username.setText("");
-            Password.setText("");
+            Nom.setText("");
+            Ape.setText("");
+            Username1.setText("");
+            Password1.setText("");
+            nota.setValue(1);
         }
     }//GEN-LAST:event_jButton3MouseClicked
 

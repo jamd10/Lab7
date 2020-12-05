@@ -1,14 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab7_jesúsmeraz;
 
-/**
- *
- * @author Jesús Meraz
- */
 public class Error {
+
+    private String CodigoError;
+    private String Descripcion; 
+
+    public Error(String CodigoError, String Descripcion) {
+        this.CodigoError = CodigoError;
+        this.Descripcion = Descripcion;
+    }
+
+    public String getCodigoError() {
+        return CodigoError;
+    }
+
+    public void setCodigoError(String CodigoError) {
+        this.CodigoError = CodigoError;
+    }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+
+    @Override
+    public String toString() {
+        return "Error{" + "CodigoError=" + CodigoError + ", Descripcion=" + Descripcion + '}';
+    }
     
 }

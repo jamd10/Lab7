@@ -41,7 +41,7 @@ public class Fase_sintesis implements Serializable {
 
     @Override
     public String toString() {
-        return "Fase_sintesis{" + "Generacion_CodigoIntermedio=" + Generacion_CodigoIntermedio + ", Generacion_Codigo=" + Generacion_Codigo + ", Optimizador_Codigo=" + Optimizador_Codigo + '}';
+        return "Fase sintesis{" + "Generacion_CodigoIntermedio=" + Generacion_CodigoIntermedio + ", Generacion_Codigo=" + Generacion_Codigo + ", Optimizador_Codigo=" + Optimizador_Codigo + '}';
     }
 
    
